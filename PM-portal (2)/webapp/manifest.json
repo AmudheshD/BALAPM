@@ -1,0 +1,233 @@
+{
+	"_version": "1.8.0",
+	"sap.app": {
+		"id": "test.routing-sample",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "servicecatalog.connectivityComponent",
+			"version": "0.0.0"
+		},
+		"dataSources": {
+			"ZBK_MP_ODATA_SRV": {
+				"uri": "/sap/opu/odata/sap/ZBK_MP_ODATA_SRV/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/ZBK_MP_ODATA_SRV/metadata.xml"
+				}
+			}
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_belize"
+		]
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "test.routing-sample.view.ViewFrom",
+			"type": "XML"
+		},
+		"dependencies": {
+			"minUI5Version": "1.30.0",
+			"libs": {
+				"sap.ui.layout": {},
+				"sap.ui.core": {},
+				"sap.m": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "test.routing-sample.i18n.i18n"
+				}
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"async": true,
+				"viewPath": "test.routing-sample.view",
+				"controlAggregation": "pages",
+				"controlId": "idAppControl",
+				"clearControlAggregation": false,
+				"bypassed": {
+					"target": []
+				}
+			},
+			"routes": [
+				{
+					"name": "TargetViewFrom",
+					"pattern": "RouteViewFrom",
+					"target": [
+						"TargetViewFrom"
+					]
+				},
+				{
+					"name": "TargetViewTo",
+					"pattern": "RouteViewTo",
+					"titleTarget": "",
+					"greedy": false,
+					"target": [
+						"TargetViewTo"
+					]
+				},
+				{
+					"name": "TargetViewRes",
+					"pattern": "RouteViewRes",
+					"titleTarget": "",
+					"greedy": false,
+					"target": [
+						"TargetViewRes"
+					]
+				},
+				{
+					"name": "TargetViewNotiList",
+					"pattern": "RouteViewNotiList",
+					"titleTarget": "",
+					"greedy": false,
+					"target": [
+						"TargetViewNotiList"
+					]
+				},
+				{
+					"name": "TargetViewWorkOrder",
+					"pattern": "RouteViewWorkOrder",
+					"titleTarget": "",
+					"greedy": false,
+					"target": [
+						"TargetViewWorkOrder"
+					]
+				},
+				{
+					"name": "TargetViewResParameter",
+					"pattern": "RouteViewRes/{parameter}",
+					"titleTarget": "",
+					"greedy": false,
+					"target": [
+						"TargetViewResParameter"
+					]
+				},
+				{
+					"name": "TargetViewNotiListParameter",
+					"pattern": "RouteViewNotiList/{parameter}",
+					"titleTarget": "",
+					"greedy": false,
+					"target": [
+						"TargetViewNotiListParameter"
+					]
+				},
+				{
+					"name": "TargetViewToParameter",
+					"pattern": "RouteViewTo/{parameter}",
+					"titleTarget": "",
+					"greedy": false,
+					"target": [
+						"TargetViewToParameter"
+					]
+				},
+				{
+					"name": "TargetWorkOrderParameter",
+					"pattern": "RouteViewWorkOrder/{parameter}",
+					"titleTarget": "",
+					"greedy": false,
+					"target": [
+						"TargetViewWorkOrderParameter"
+					]
+				}
+			],
+			"targets": {
+				"TargetViewFrom": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewName": "ViewFrom"
+				},
+				"TargetViewTo": {
+					"viewType": "XML",
+					"viewName": "ViewTo"
+				},
+				"TargetViewToParameter": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewName": "ViewTo"
+				},
+				"TargetViewRes": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewName": "ViewRes"
+				},
+				"TargetViewResParameter": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewName": "ViewRes"
+				},
+					"TargetViewNotiList": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewName": "ViewNotiList"
+				},
+				"TargetViewNotiListParameter": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewName": "ViewNotiList"
+				},
+					"TargetViewWorkOrder": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewName": "ViewWorkOrder"
+				},
+				"TargetViewWorkOrderParameter": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewName": "ViewWorkOrder"
+				}
+			}
+		}
+	},
+	"sap.platform.hcp": {
+		"uri": "webapp",
+		"_version": "1.1.0"
+	}
+}

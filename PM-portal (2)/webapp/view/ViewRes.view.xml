@@ -1,0 +1,33 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="test.routing-sample.controller.ViewRes"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page  showNavButton="true" navButtonPress="onNavBack">
+				
+				<content>
+					<ObjectHeader title="Clcik on the Below cards to View more information on Notification and workorder "
+						responsive="true" class="sapUiResponsivePadding--header">
+						
+						<markers>
+							<ObjectMarker type="Favorite"/>
+							<ObjectMarker type="Flagged"/>
+							
+						</markers>
+					</ObjectHeader>
+					<html:div class="notificationMain">
+						<html:div class="notifiationsub1">
+							<ImageContent src="sap-icon://alert" class="noti-image"/>
+							<Text class="noti-cont" text="Notifications"/>
+							<Button text="Click Here!" class="noti-btn" press="notiRes"/>
+						</html:div>
+						<html:div class="notifiationsub2">
+							<ImageContent src="sap-icon://activity-individual" class="noti-image"/>
+							<Text class="noti-cont1" text="Work-order"/>
+							<Button text="Click Here!" class="noti-btn" press="workorderRes"/>
+						</html:div>
+					</html:div>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

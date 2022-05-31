@@ -1,0 +1,49 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="test.routing-sample.controller.ViewWorkOrder"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="View res" showNavButton="true" navButtonPress="onNavBack">
+				<content>
+					
+					
+					<Table id="idOrdersTable" items="{notificationList>/results}" mode="SingleSelectMaster" selectionChange="action">
+						<headerToolbar>
+							<OverflowToolbar>
+								<Title text="{/title}"/>
+								<ToolbarSpacer/>
+								<SearchField width="20%" search="onSearch" value="{/title}"/>
+								<Button tooltip="Sort" icon="sap-icon://sort" press="onSort"/>
+								<Button tooltip="Group" icon="sap-icon://group-2" press="onGroup"/>
+							</OverflowToolbar>
+						</headerToolbar>
+						<columns>
+							<Column>
+								<Text text="Description"/>
+							</Column>
+							<Column>
+								<Text text="Equidescr"/>
+							</Column>
+							<Column>
+								<Text text="Equipment"/>
+							</Column>
+							<Column>
+								<Text text="Time"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem type="Navigation">
+								<cells>
+									<Text text="{notificationList>Description}"/>
+									<Text text="{notificationList>Equidescr}"/>
+									<Text text="{notificationList>Equipment}"/>
+									<Text text="{notificationList>LateSchedFinDate}"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+					<List id="trying"></List>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
